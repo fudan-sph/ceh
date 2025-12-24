@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助中心 - 儿童重要肿瘤与血液性疾病多模态数据分析平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6096B4',
+                        secondary: '#EEE9DA',
+                        dark: '#1D2129',
+                        light: '#F8FAFC' // 稍微调浅背景色，增加高级感
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding { @apply py-12 md:py-20; }
+            /* 隐藏滚动条但保留功能 */
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-light">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">首页</a>
+                    <a href="manual.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">使用手册</a>
+                    <a href="tools.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">分析工具</a>
+                    <a href="help.html"
+                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">帮助中心</a>
+                    <a href="about.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">关于我们</a>
+                    <a href="contact.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                    <a href="announcement.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">公告栏</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 md:pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <aside class="lg:w-1/5">
+                    <div class="sticky top-28 space-y-3 bg-white/50 text-lg p-2 rounded-2xl backdrop-blur-sm">
+                        <a href="#base"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-info-circle text-primary opacity-60 group-hover:opacity-100"></i>
+                            <span class="font-medium">平台基础问题</span>
+                        </a>
+                        <a href="#analysis"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-database text-primary opacity-60 group-hover:opacity-100"></i>
+                            <span class="font-medium">数据分析相关</span>
+                        </a>
+                        <a href="#security"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-shield text-primary opacity-60 group-hover:opacity-100"></i>
+                            <span class="font-medium">数据安全与隐私</span>
+                        </a>
+                        <a href="#support"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-commenting text-primary opacity-60 group-hover:opacity-100"></i>
+                            <span class="font-medium">技术支持与反馈</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <div class="lg:w-4/5 space-y-16">
+
+                    <section id="base" class="scroll-mt-32">
+                        <div class="flex items-center mb-8">
+                            <div class="w-1.5 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">平台基础问题</h2>
+                        </div>
+                        <div class="grid gap-6">
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q1.</span> 什么是儿童重要肿瘤与血液性疾病多模态数据分析平台？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    本平台是一个整合基因组学、转录组学、影像组学等多维度数据的分析工具，专注于儿童重要肿瘤与血液性疾病的研究，助力精准医疗研究。
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q2.</span> 如何访问平台的核心功能？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    点击首页的「立即使用」按钮。首次使用建议先阅读「使用手册」了解操作流程。
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q3.</span> 使用平台需要付费吗？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    目前平台分析功能对项目组内学术研究免费开放，具体可联系平台管理员咨询。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="analysis" class="scroll-mt-32">
+                        <div class="flex items-center mb-8">
+                            <div class="w-1.5 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">数据分析相关问题</h2>
+                        </div>
+                        <div class="grid gap-6">
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q1.</span> 平台支持哪些类型的单模态数据分析？
+                                </h4>
+                                <div class="pl-0 md:pl-4">
+                                    <ul
+                                        class="grid grid-cols-1 md:grid-cols-2 gap-y-2 text-gray-600 bg-light p-4 rounded-xl">
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i>
+                                            基因组学（SNV/Indel检测、拷贝数变异等）</li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 表观遗传组学（DNA甲基化、组蛋白修饰等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i>
+                                            转录组学（差异表达基因、RNA-seq定量等）</li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 单细胞组学（细胞亚型鉴定、靶点筛选等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 蛋白组学（蛋白质定量、蛋白互作分析等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 代谢组学（差异代谢分析、代谢通路富集等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 微生物组学（微生物群落结构、功能分析等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 影像组学（特征提取、表型关联分析等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 病理组学（组织切片分析、病理特征提取等）
+                                        </li>
+                                        <li class="flex items-center"><i
+                                                class="fa fa-check text-primary mr-2 text-xs"></i> 临床数据分析（生存分析、风险模型构建等）
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q2.</span> 多模态数据分析与单模态分析有什么区别？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    单模态分析针对单一类型数据进行专项解析；多模态分析则整合多种数据，实现更全面的疾病亚型分类、治疗反应预测及预后评估，结果更具综合性。
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q3.</span> 上传数据有格式要求吗？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    不同分析工具对数据格式有特定要求（如基因组学支持vcf、bam格式，影像组学支持dcm、png格式等）。具体格式说明参考首页的「查看手册」中的具体说明。
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                                <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                    <span class="text-primary mr-3 text-lg">Q4.</span> 分析结果如何解读？
+                                </h4>
+                                <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                    相应分析工具的R包官方文档中提供多种分析工具可视化图表代码及关键指标说明，请查看官方帮助文档详情；复杂结果建议结合平台提供的案例分析或咨询领域专家。
+                                </p>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section id="security" class="scroll-mt-32">
+                        <div class="flex items-center mb-8">
+                            <div class="w-1.5 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">数据安全与隐私</h2>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                        <span class="text-primary mr-3 text-lg">Q1.</span> 上传的数据会被泄露吗？
+                                    </h4>
+                                    <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                        平台高度重视数据安全与隐私保护，所有数据仅授权用户可访问，不对外共享用户数据。
+                                    </p>
+                                </div>
+                                <div class="pt-6 border-t border-gray-50">
+                                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                        <span class="text-primary mr-3 text-lg">Q2.</span> 平台如何保障数据传输安全？
+                                    </h4>
+                                    <p class="text-gray-600 leading-relaxed pl-10 text-justify">实
+                                        施权限分级管理，仅平台管理员可在特殊情况下接触数据，且需严格记录操作日志。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="support" class="scroll-mt-32">
+                        <div class="flex items-center mb-8">
+                            <div class="w-1.5 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">技术支持与反馈</h2>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                        <span class="text-primary mr-3 text-lg">Q1.</span> 使用中遇到问题如何获取帮助？
+                                    </h4>
+                                    <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                        可通过以下方式解决：
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-600"
+                                        style="text-align: justify; text-indent: 2em; ">
+                                        <li>查阅「使用手册」中的操作步骤和常见问题。</li>
+                                        <li>根据"联系我们"页面中的留言咨询提交问题描述。</li>
+                                    </ul>
+                                </div>
+
+                                <div class="pt-6 border-t border-gray-50">
+                                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-start">
+                                        <span class="text-primary mr-3 text-lg">Q2.</span> 平台会定期更新功能吗？
+                                    </h4>
+                                    <p class="text-gray-600 leading-relaxed pl-10 text-justify">
+                                        平台团队会根据用户反馈和技术进展，定期改进版本，确保用户获得最佳使用体验。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                    </div>
+                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
+                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
+                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

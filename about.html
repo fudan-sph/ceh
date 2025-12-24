@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 儿童重要肿瘤与血液性疾病多模态数据分析平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6096B4',
+                        secondary: '#EEE9DA',
+                        dark: '#1D2129',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding { @apply py-12 md:py-20; }
+            .content-card { @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8 transition-all hover:shadow-md; }
+            .accent-text { @apply text-[#967E76] font-bold; }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-light">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">首页</a>
+                    <a href="manual.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">使用手册</a>
+                    <a href="tools.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">分析工具</a>
+                    <a href="help.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">帮助中心</a>
+                    <a href="about.html"
+                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">关于我们</a>
+                    <a href="contact.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                    <a href="announcement.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">公告栏</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 md:pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <aside class="lg:w-1/6">
+                    <div class="sticky top-28 space-y-2 bg-white/50 p-2 text-lg rounded-2xl backdrop-blur-sm">
+                        <a href="#scientist"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-graduation-cap w-5 text-gray-400 group-hover:text-primary"></i>
+                            <span>课题负责人</span>
+                        </a>
+                        <a href="#intro"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-users w-5 text-gray-400 group-hover:text-primary"></i>
+                            <span>团队简介</span>
+                        </a>
+                        <a href="#direction"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-flask w-5 text-gray-400 group-hover:text-primary"></i>
+                            <span>研究方向</span>
+                        </a>
+                        <a href="#photos"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-camera w-5 text-gray-400 group-hover:text-primary"></i>
+                            <span>团队风采</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <div class="lg:w-5/6">
+
+                    <section id="scientist" class="content-card scroll-mt-32">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                            <div class="w-40 flex-shrink-0">
+                                <img src="images/avatar.png" alt="张蕴晖"
+                                    class="rounded-2xl w-full shadow-lg border-4 border-white">
+                                <div class="mt-4 text-center">
+                                    <span
+                                        class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">PI
+                                        / Professor</span>
+                                </div>
+                            </div>
+
+                            <div class="flex-grow">
+                                <div class="mb-6">
+                                    <div class="flex items-center justify-center md:justify-start mb-4">
+                                        <span class="px-2 py-1 text-2xl font-bold">张蕴晖
+                                            | 教授</span>
+                                    </div>
+                                    <p class="text-lg font-semibold mt-1 mb-1">“上海亲子队列”负责人</p>
+                                    <p class="text-lg font-semibold text-[#967E76] italic">全球前2%顶尖科学家 <span
+                                            class="text-gray-600 text-lg italic">(毒理学、环境科学)</span></p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center">
+                                            <i class="fa fa-star text-primary mr-2"></i> 主持项目
+                                        </h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">
+                                            国家重点研发计划 <span class="accent-text">3</span> 项、国家自然科学基金 <span
+                                                class="accent-text">6</span> 项、上海市科委科技创新行动项目 <span
+                                                class="accent-text">5</span> 项等。
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center">
+                                            <i class="fa fa-trophy text-primary mr-2"></i> 科技奖励
+                                        </h4>
+                                        <p class="text-gray-600 text-sm leading-relaxed">
+                                            教育部自然科学二等奖、上海市科技进步二等奖、中华预防医学会科学技术三等奖。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-gray-50">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">代表性成果</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start bg-light p-4 rounded-xl">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <p class="text-gray-600 text-sm">建立了<span
+                                            class="accent-text">上海亲子队列研究平台</span>，合作建立温州出生队列。</p>
+                                </div>
+
+                                <div class="flex items-start bg-light p-4 rounded-xl">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <p class="text-gray-600 text-sm">构建了 <span class="accent-text">16类309种</span>
+                                        环境污染物精准痕量检测技术，获专利 <span class="accent-text">2</span> 项，计算机软著 <span
+                                            class="accent-text">4</span> 项。</p>
+                                </div>
+
+                                <div class="flex items-start bg-light p-4 rounded-xl">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <p class="text-gray-600 text-sm">主编著作<span class="accent-text">4</span>部,
+                                        《Emerging chemicals and human health》、《环境卫生学》等</p>
+                                </div>
+
+                                <div class="flex items-start bg-light p-4 rounded-xl">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                    <p class="text-gray-600 text-sm">发表高质量论文<span class="accent-text">100+</span>篇，
+                                        <span class="accent-text italic">Environ Sci Technol,
+                                            Environ Health
+                                            Perspect,</span>
+                                        <span class="italic">JAMA Netw Open, J Hazard Mater, Environ
+                                            Int </span>等
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="intro" class="content-card scroll-mt-32">
+                        <div class="flex items-center mb-6">
+                            <div class="w-2 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">团队简介</h2>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-justify">
+                            我们团队隶属于复旦大学公共卫生学院环境卫生教研室，专注于环境与儿童健康研究以及儿童重要肿瘤与血液性疾病的病因和防治关键技术研究。团队依托“十四五”国家科技部重点研发计划资助项目，构建了儿童重要肿瘤与血液性疾病多模态数据分析平台，致力于为精准诊断、治疗与预后评估提供技术支持。
+                        </p>
+                    </section>
+
+                    <section id="direction" class="content-card scroll-mt-32">
+                        <div class="flex items-center mb-6">
+                            <div class="w-2 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">研究方向</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center p-2 border border-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
+                                <i class="fa fa-leaf text-primary text-xl mr-5 w-8"></i>
+                                <span class="text-gray-700">新型环境因素的生殖发育毒性效应及敏感人群健康风险评估</span>
+                            </div>
+                            <div
+                                class="flex items-center p-2 border border-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
+                                <i class="fa fa-medkit text-primary text-xl mr-5 w-8"></i>
+                                <span class="text-gray-700">基于专病队列的儿童重要肿瘤与血液性疾病致病性遗传变异及驱动机制研究。</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="photos" class="content-card scroll-mt-32 overflow-hidden">
+                        <div class="flex items-center mb-6">
+                            <div class="w-2 h-8 bg-primary rounded-full mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">团队风采</h2>
+                        </div>
+                        <div class="group relative">
+                            <img src="images/team.jpg" alt="团队照片" class="rounded-xl w-full h-auto shadow-sm">
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                    </div>
+                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
+                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
+                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

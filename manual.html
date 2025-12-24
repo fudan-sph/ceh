@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用手册 - 儿童重要肿瘤与血液性疾病多模态数据分析平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6096B4',
+                        secondary: '#EEE9DA',
+                        dark: '#1D2129',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding { @apply py-12 md:py-20; }
+            .step-number { @apply w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-md shadow-primary/20; }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-light">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">首页</a>
+                    <a href="manual.html"
+                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">使用手册</a>
+                    <a href="tools.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">分析工具</a>
+                    <a href="help.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">帮助中心</a>
+                    <a href="about.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">关于我们</a>
+                    <a href="contact.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                    <a href="announcement.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">公告栏</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 md:pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <aside class="lg:w-1/6">
+                    <div class="sticky top-28 space-y-2 bg-white/50 text-lg p-2 rounded-2xl backdrop-blur-sm">
+                        <a href="#step1"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white hover:shadow-sm font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i
+                                class="fa fa-user-circle-o w-5 text-gray-400 group-hover:text-primary transition-colors"></i>
+                            <span>注册与登录</span>
+                        </a>
+
+                        <a href="#step2"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white hover:shadow-sm font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-sliders w-5 text-gray-400 group-hover:text-primary transition-colors"></i>
+                            <span>初始化配置</span>
+                        </a>
+
+                        <a href="#step3"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white hover:shadow-sm font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i
+                                class="fa fa-cloud-upload w-5 text-gray-400 group-hover:text-primary transition-colors"></i>
+                            <span>数据上传导入</span>
+                        </a>
+
+                        <a href="#step4"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white hover:shadow-sm font-medium text-gray-700 hover:text-primary border-l-4 border-transparent hover:border-primary group">
+                            <i class="fa fa-bar-chart w-5 text-gray-400 group-hover:text-primary transition-colors"></i>
+                            <span>运行分析查看</span>
+                        </a>
+
+                        <div class="h-px bg-gray-200 my-4"></div>
+
+                        <a href="#video-guide"
+                            class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all hover:bg-white hover:shadow-sm font-medium text-gray-700 hover:text-primary group">
+                            <i
+                                class="fa fa-play-circle w-5 text-gray-400 group-hover:text-primary transition-colors"></i>
+                            <span>视频演示</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <div class="lg:w-5/6 space-y-12">
+
+                    <section id="step1" class="scroll-mt-32">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div class="bg-primary/5 px-8 py-6 border-b border-gray-50">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa fa-user-circle-o text-2xl text-primary"></i>
+                                    <h2 class="text-2xl font-bold text-gray-800">注册与登录</h2>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                                    本平台依托 <strong>RStudio Server</strong> 搭建，请联系平台管理员获取账号注册权限。
+                                </p>
+                                <div class="bg-light p-5 rounded-xl border-l-4 border-primary">
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li>• 点击主页 <span class="text-primary font-bold">“立即使用”</span> 访问登录界面。</li>
+                                        <li>• 输入管理员分配的“用户名”和“初始密码”。</li>
+                                        <li>• <strong>安全提醒：</strong> 首次登录后，请立即前往个人设置修改初始密码。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="step2" class="scroll-mt-32">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div class="bg-primary/5 px-8 py-6 border-b border-gray-50">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa fa-sliders text-2xl text-primary"></i>
+                                    <h2 class="text-2xl font-bold text-gray-800">初始化配置</h2>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="bg-light p-5 rounded-xl border-l-4 border-primary">
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li>• <span class="font-bold text-primary">1. 工作目录</span>
+                                            在右侧【Files】区域新建专用目录（如“R_Workspace”）并设为默认，控制台输入
+                                            <code>getwd()</code> 验证。
+                                        </li>
+                                        <li>• <span class="font-bold text-primary">2. 界面个性化</span> 通过【Tools】→【Global
+                                            Options】→【Appearance】调整主题和字体大小。
+                                        </li>
+                                        <li>• <span class="font-bold text-primary">3. R包配置</span>
+                                            在【Packages】点击【Install】批量安装 <code>dplyr</code>,
+                                            <code>ggplot2</code> 等常用包。务必勾选“Install dependencies”。
+                                        </li>
+                                        <li>• <span class="font-bold text-primary">4. 代理设置</span>
+                                            如遇网络问题，可在【Tools】→【Global Options】→【Packages】配置CRAN镜像。
+                                        </li>
+                                        <li>• <span class="font-bold text-primary">5. 环境验证</span>
+                                            通过【File】→【New File】→【R Script】新建脚本，输入测试代码运行，控制台正常显示结果即配置完成。
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="step3" class="scroll-mt-32">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div class="bg-primary/5 px-8 py-6 border-b border-gray-50">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa fa-cloud-upload text-2xl text-primary"></i>
+                                    <h2 class="text-2xl font-bold text-gray-800">数据上传与导入</h2>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="bg-light p-5 rounded-xl border-l-4 border-primary">
+                                    <div class="flex-1 text-sm">
+                                        <p class="mb-3 font-semibold text-dark">流程操作（以CSV为例）：</p>
+                                        <ul class="space-y-2 text-sm text-gray-600">
+                                            <li>• <span class="font-bold text-primary">1.
+                                                    数据上传：</span>点击右侧【Files】区域的 <span class="font-bold">Upload</span> 按钮。
+                                            </li>
+                                            <li>• <span class="font-bold text-primary">2.
+                                                    数据导入：</span>加载<code>rio</code>包，使用代码 <code>import("文件名.csv")</code>
+                                                运行导入。</li>
+                                            <li>• <span class="font-bold text-primary">3.
+                                                    验证结果：</span>在【Environment】区域查看对象是否成功生成。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="step4" class="scroll-mt-32">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            <div class="bg-primary/5 px-8 py-6 border-b border-gray-50">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa fa-bar-chart text-2xl text-primary"></i>
+                                    <h2 class="text-2xl font-bold text-gray-800">运行分析查看</h2>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div class="bg-light p-5 rounded-xl border-l-4 border-primary">
+                                    <p class="mb-3 font-semibold text-dark">数据导入成功后，可开展基础数据分析与结果展示：</p>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li>• <span class="font-bold text-primary">1.
+                                                数据清洗：</span>使用dplyr等包进行数据查看、清洗、筛选排序等操作，结果实时显示在控制台。</li>
+                                        <li>• <span class="font-bold text-primary">2. 数据可视化：</span>
+                                            通过ggplot2包绘制可视化图形展示结果。图形自动显示在右侧Plots区域，支持保存导出。
+                                        <li>• <span class="font-bold text-primary">3. 结果保存：</span>
+                                            使用write.csv()等函数将处理后的数据导出为CSV等格式文件，保存在工作目录中。</li>
+                                        <li>• <span class="font-bold text-primary">4. 报告生成：</span>
+                                            若需生成正式报告，可新建RMarkdown文档整合代码、分析过程与结果，最终导出为PDF等格式。</li>
+                                        <li>• <span class="font-bold text-primary">5. 安全退出：</span>
+                                            完成操作后，点击页面右上角的用户名，在下拉菜单中选择【Sign Out】，即可安全退出平台。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div
+                        class="bg-white rounded-2xl p-8 text-black flex flex-col shadow-sm border-t-4 border-primary md:flex-row items-center justify-between">
+                        <h3 class="text-2xl font-bold text-center mb-3">
+                            <i class="fa fa-server text-primary mr-2"></i>
+                            RStudio Server 深度指南
+                        </h3>
+                        <p class="text-grey-600 text-center mb-3">
+                            想了解更高级的配置与服务器端使用技巧？
+                        </p>
+                        <div>
+                            <a href="https://docs.posit.co/ide/user/" target="_blank"
+                                class="whitespace-nowrap px-6 py-3 bg-primary text-white rounded-full font-bold hover:bg-primary bg-opacity-90 transition-colors">
+                                访问官方文档 <i class="fa fa-external-link ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <section id="video-guide" class="scroll-mt-32">
+                        <div class="bg-white rounded-2xl shadow-sm p-2 border-t-4 border-primary">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                                    <i class="fa fa-video-camera text-primary mr-3"></i>平台演示视频
+                                </h3>
+                                <div class="rounded-xl overflow-hidden shadow-2xl bg-black">
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                                        <iframe src="https://www.youtube.com/embed/FIrsOBy5k58"
+                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
+                                            allowfullscreen="true">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                    </div>
+                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
+                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
+                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

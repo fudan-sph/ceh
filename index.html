@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儿童重要肿瘤与血液性疾病多模态数据分析平台</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind配置：自定义颜色和字体
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6096B4',
+                        secondary: '#EEE9DA',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-light">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <!-- <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa fa-flask text-white text-2xl"></i>
+                    
+                </a> -->
+
+                <!-- 桌面端导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">首页</a>
+                    <a href="manual.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">使用手册</a>
+                    <a href="tools.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">分析工具</a>
+                    <a href="help.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">帮助中心</a>
+                    <a href="about.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">关于我们</a>
+                    <a href="contact.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                    <a href="announcement.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">公告栏</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首页 -->
+        <section id="home" class="pt-24 md:pt-32 section-padding bg-gradient-to-b from-white to-light">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- 横幅 -->
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16">
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                        <h1 class="text-[clamp(1.5rem,4vw,2.3rem)] font-bold text-dark leading-tight mb-4">
+                            <!-- 第一行：强制不换行，确保始终单行 -->
+                            <span class="whitespace-nowrap block">儿童重要肿瘤与血液性疾病</span>
+                            <!-- 第二行：固定在下方，同样强制不换行 -->
+                            <span class="text-primary whitespace-nowrap block">多模态数据分析平台</span>
+                        </h1>
+                        <p class="text-base md:text-base text-gray-600 mb-8">
+                            整合基因组学、转录组学、影像组学等多维度数据，提供精准的疾病亚型分类、治疗反应预测与预后分析工具
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href=""
+                                class="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                                立即使用 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="./resources/手册.pdf" target="_blank" rel="noopener noreferrer"
+                                class="bg-white hover:bg-gray-100 text-dark border border-gray-300 font-medium px-6 py-3 rounded-lg transition-colors">
+                                查看手册 <i class="fa fa-book ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-12/12">
+                        <img src="images/banner-1.png" alt="多模态数据分析示意图" class="w-full h-auto">
+                    </div>
+                </div>
+
+                <!-- 分析功能展示 -->
+                <div class="mb-6">
+
+                    <!-- 核心分析功能标题（胶囊包裹文字+两侧细长条） -->
+                    <div class="flex items-center justify-center mb-12 w-full">
+                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+                        <!-- 胶囊包裹标题 -->
+                        <div class="bg-primary py-2 px-6 rounded-full shadow-md mx-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-white whitespace-nowrap text-center">核心分析功能
+                            </h2>
+                        </div>
+                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+                    </div>
+
+
+                    <!-- 核心布局：仅展示数据分析示意图 -->
+                    <div class="grid grid-cols-1 gap-8">
+                        <!-- 数据分析示意图 -->
+                        <div
+                            class="bg-[#ECE2E1] bg-opacity-50 rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                            <!-- 数据分析示意图容器 - 恢复点击放大相关属性 -->
+                            <div class="w-full h-full flex items-center justify-center cursor-pointer img-viewer-trigger"
+                                data-img-src="images/data_analyze_flow.png">
+                                <img src="images/data_analyze_flow.png" alt="数据分析示意图"
+                                    class="max-w-full max-h-[600px] rounded-xl shadow-lg object-contain transition-all duration-300 hover:scale-[1.01]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 图片放大模态框（默认隐藏） -->
+                    <div id="imgModal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden">
+                        <button id="closeModal"
+                            class="absolute top-6 right-6 text-white text-3xl hover:text-gray-300 transition-colors">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <div class="max-w-[95vw] max-h-[95vh] p-4">
+                            <img id="modalImg" src="" alt="放大图片"
+                                class="max-w-full max-h-full object-contain rounded-xl">
+                        </div>
+                    </div>
+
+                    <!-- 引入Font Awesome图标库（用于关闭按钮） -->
+                    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+                        rel="stylesheet">
+
+                    <!-- 交互脚本 -->
+                    <script>
+                        // 获取元素
+                        const modal = document.getElementById('imgModal');
+                        const closeBtn = document.getElementById('closeModal');
+                        const modalImg = document.getElementById('modalImg');
+                        const imgTrigger = document.querySelector('.img-viewer-trigger');
+
+                        // 打开模态框并加载对应图片
+                        function openModal(imgSrc) {
+                            modal.classList.remove('hidden');
+                            modalImg.src = imgSrc;
+                            // 禁止页面滚动
+                            document.body.style.overflow = 'hidden';
+                        }
+
+                        // 关闭模态框
+                        function closeModal() {
+                            modal.classList.add('hidden');
+                            // 恢复页面滚动
+                            document.body.style.overflow = '';
+                        }
+
+                        // 给图片触发器绑定点击事件
+                        if (imgTrigger) {
+                            imgTrigger.addEventListener('click', function () {
+                                const imgSrc = this.getAttribute('data-img-src');
+                                openModal(imgSrc);
+                            });
+                        }
+
+                        // 点击关闭按钮
+                        closeBtn.addEventListener('click', closeModal);
+
+                        // 点击模态框背景关闭
+                        modal.addEventListener('click', function (e) {
+                            if (e.target === this) {
+                                closeModal();
+                            }
+                        });
+
+                        // ESC键关闭
+                        document.addEventListener('keydown', function (e) {
+                            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                                closeModal();
+                            }
+                        });
+                    </script>
+
+                </div>
+
+                <!-- 发表论文展示 -->
+                <div class="mb-16">
+                    <!-- 项目组特色论文标题（保持风格统一） -->
+                    <div class="flex items-center justify-center mb-12 w-full">
+                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+                        <!-- 胶囊包裹标题 -->
+                        <div class="bg-primary py-2 px-6 rounded-full shadow-md mx-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-white whitespace-nowrap text-center">项目组特色论文
+                            </h2>
+                        </div>
+                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+                        <!-- 论文1 -->
+                        <div class="bg-[#ECF4F3] bg-opacity-50 rounded-xl shadow overflow-hidden card-hover">
+                            <!-- 给图片添加a标签，跳转对应PDF -->
+                            <a href="resources/paper1.pdf" target="_blank" rel="noopener noreferrer">
+                                <img src="images/papers_pictures/paper1.png" alt="论文1"
+                                    class="max-w-[95%] mx-auto mt-4 h-48 object-cover rounded-lg cursor-pointer">
+                            </a>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium mb-2">NET-TMCO6 轴是克服肝癌免疫抑制的潜在靶点</h4>
+                                <p class="text-gray-600 text-sm">
+                                    <i>Cancer research, 2024</i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 论文2 -->
+                        <div class="bg-[#F3E9DD] bg-opacity-50 rounded-xl shadow overflow-hidden card-hover">
+                            <!-- 给图片添加a标签，跳转对应PDF -->
+                            <a href="resources/paper2.pdf" target="_blank" rel="noopener noreferrer">
+                                <img src="images/papers_pictures/paper2.png" alt="论文2"
+                                    class="max-w-[95%] mx-auto mt-4 h-48 object-cover rounded-lg cursor-pointer">
+                            </a>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium mb-2">DDAH1 系 EGFR+ 癌症预后标志物和潜在治疗靶点</h4>
+                                <p class="text-gray-600 text-sm">
+                                    <i>Advanced science, 2025</i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 论文3 -->
+                        <div class="bg-[#FDF6EC] bg-opacity-50 rounded-xl shadow overflow-hidden card-hover">
+                            <a href="resources/paper3.pdf" target="_blank" rel="noopener noreferrer">
+                                <img src="images/papers_pictures/paper3.png" alt="论文3"
+                                    class="max-w-[95%] mx-auto mt-4 h-48 object-cover rounded-lg cursor-pointer">
+                            </a>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium mb-2">肠道菌群介导环境污染物神经毒性</h4>
+                                <p class="text-gray-600 text-sm">
+                                    <i>Journal of hazardous materials, 2024</i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 论文4 -->
+                        <div class="bg-[#B7CADB] bg-opacity-50 rounded-xl shadow overflow-hidden card-hover">
+                            <a href="resources/paper4.pdf" target="_blank" rel="noopener noreferrer">
+                                <img src="images/papers_pictures/paper4.png" alt="论文4"
+                                    class="max-w-[95%] mx-auto mt-4 h-48 object-cover rounded-lg cursor-pointer">
+                            </a>
+                            <div class="p-4">
+                                <h4 class="text-sm font-medium mb-2">scRNA-seq 揭示 SCCOHT 内异质性和免疫微环境</h4>
+                                <p class="text-gray-600 text-sm">
+                                    <i>Journal of ovarian research, 2025</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目组优秀论文列表折叠板块（默认折叠） -->
+                    <div class="w-full rounded-xl shadow-sm bg-primary hover:bg-opacity-90 transition-all duration-300">
+                        <!-- 展开/收起标题栏（点击触发器） -->
+                        <div id="paperListToggle"
+                            class="flex items-center justify-between p-4 cursor-pointer hover:shadow-md transition-all duration-300 rounded-t-xl">
+                            <h3 class="text-lg font-bold text-white mb-0">
+                                <i class="fa fa-file-text-o text-white mr-2 font-bold"></i>项目组优秀论文列表
+                            </h3>
+                            <i id="toggleIcon"
+                                class="fa fa-chevron-down text-white transition-transform duration-300"></i>
+                        </div>
+
+                        <!-- 优秀论文列表容器（默认隐藏） -->
+                        <div id="paperListContent" class="w-full space-y-3 p-3 border-t border-gray-100 rounded-b-xl"
+                            style="display: none;">
+                            <a href="https://doi.org/10.1158/0008-5472.CAN-23-2986" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Song M, <i>et al.</i> DNA of
+                                        Neutrophil Extracellular Traps Binds TMCO6 to Impair CD8+ T-cell Immunity in
+                                        Hepatocellular Carcinoma.
+                                        <i>Cancer Res</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 16.6）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1002/advs.202503647" target="_blank" rel="noopener noreferrer"
+                                class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Yang JH, <i>et al.</i> DDAH1
+                                        Promotes Cisplatin Chemoresistance in Patients with Locally Advanced
+                                        Nasopharyngeal
+                                        Carcinoma via the
+                                        EGFR-JAK2-STAT3 Pathway. <i>Adv Sci</i>. 2025.<br>
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 14.1）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1016/j.jhazmat.2024.133920" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Zhou Y, <i>et al.</i> Prenatal PFAS
+                                        exposure, gut microbiota dysbiosis, and neurobehavioral development in
+                                        childhood.
+                                        <i>J Hazard Mater</i>.
+                                        2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 13.6）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1016/j.eclinm.2024.102701" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Lu S, <i>et al.</i> Pegylated
+                                        liposomal doxorubicin combined with cyclophosphamide and vincristine in
+                                        pediatric
+                                        patients with
+                                        relapsed/refractory solid tumor: a single-arm,&nbsp; open-label, phase I study.
+                                        <i>EClinicalMedicine</i>.
+                                        2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 10）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.20892/j.issn.2095-3941.2023.0471" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Xie W, <i>et al.</i> Current therapeutic
+                                        landscape and resistance mechanisms to larotrectinib.
+                                        <i>Cancer Biol Med</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 8.4）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1038/s41698-025-01176-1" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        He JR, <i>et al.</i> Who may omit
+                                        locoregional radiotherapy in de novo metastatic nasopharyngeal carcinoma: a
+                                        failure-pattern-based strategy
+                                        in
+                                        the immunotherapy era. <i>NPJ Precis Oncol</i>. 2025.<br>
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 8）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1093/ije/dyad185" target="_blank" rel="noopener noreferrer"
+                                class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Gui Y, <i>et al.</i> Cohort Profile:
+                                        The Shanghai Maternal-Child Pairs Cohort (MCPC). <i>Int J Epidemiol</i>.
+                                        2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 7.7）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1007/s00259-025-07529-z" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Liu LT, <i>et al.</i> [(18)F]
+                                        Fluorodeoxyglucose positron emission tomography/computed tomography scan and
+                                        liquid
+                                        biopsy at 12 weeks
+                                        posttreatment for surveillance of locoregionally&nbsp; advanced nasopharyngeal
+                                        carcinoma. <i>Eur J Nucl Med Mol Imaging</i>. 2025.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 7.6）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1186/s12967-024-05921-1" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Que Y, <i>et al.</i> Genomic and
+                                        clinical characterization of pediatric lymphoepithelioma-like carcinoma.
+                                        <i>J Transl Med</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 7.5）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1016/j.gendis.2023.06.010" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Yao Y, <i>et al.</i> Identification of
+                                        TMEM217 as a novel prognostic biomarker and potential therapeutic target in
+                                        acute
+                                        myeloid leukemia.
+                                        <i>Genes Dis</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 6.8）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1007/s10875-024-01669-x" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Wang P, <i>et al.</i> Cord Blood
+                                        Transplantation for Very Early-Onset Inflammatory Bowel Disease Caused by
+                                        Interleukin-10 Receptor
+                                        Deficiency.
+                                        <i>J Clin Immunol</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 5.7）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.3390/ijms241914476" target="_blank" rel="noopener noreferrer"
+                                class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Xu J, <i>et al.</i> RAD51D Secondary
+                                        Mutation-Mediated Resistance to PARP-Inhibitor-Based Therapy in HGSOC.
+                                        <i>Int J Mol Sci</i>. 2023.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 4.9）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.3390/ph18060927" target="_blank" rel="noopener noreferrer"
+                                class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Jin G, <i>et al.</i> In Vivo PK-PD
+                                        and Drug-Drug Interaction Study of Dorzagliatin for the Management of PI3Kα
+                                        Inhibitor-Induced Hyperglycemia.
+                                        <i>Pharmaceuticals (Basel)</i>. 2025.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 4.8）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1186/s13244-024-01851-0" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Liu Y, <i>et al.</i> Multimodality
+                                        deep learning radiomics predicts pathological response after neoadjuvant
+                                        chemoradiotherapy for esophageal
+                                        squamous cell carcinoma.
+                                        <i>Insights Imaging</i>. 2024.<br>
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 4.5）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1186/s13048-025-01649-8" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Gao Y, <i>et al.</i> Single-cell RNA
+                                        sequencing reveals the intra-tumoral heterogeneity and immune microenvironment
+                                        of
+                                        small cell carcinoma of
+                                        the ovary, hypercalcemic type. <i>J Ovarian Res</i>. 2025.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 4.2）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.3802/jgo.2024.35.e96" target="_blank" rel="noopener noreferrer"
+                                class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Zheng K, <i>et al.</i> Clinical
+                                        characteristics and status of treatment of small-cell carcinoma of the ovary,
+                                        hypercalcemic type in the
+                                        Chinese
+                                        population: a meta-analysis.
+                                        <i>J Gynecol Oncol</i>. 2024.<br>
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 3.9）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.3390/biomedicines13010001" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Zheng K, <i>et al.</i> mTOR Inhibitor
+                                        Everolimus Modulates Tumor Growth in Small-Cell Carcinoma of the Ovary,
+                                        Hypercalcemic Type and Augments the
+                                        Drug
+                                        Sensitivity of Cancer Cells to &nbsp; Cisplatin.
+                                        <i>Biomedicines</i>. 2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 3.9）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1186/s13014-024-02473-y" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Li JB, <i>et al.</i> Joint modeling
+                                        of longitudinal health-related quality of life during concurrent
+                                        chemoradiotherapy
+                                        period and long-term
+                                        survival
+                                        among patients with advanced&nbsp; nasopharyngeal carcinoma. <i>Radiat
+                                            Oncol</i>.
+                                        2024.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 3.2）</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a href="https://doi.org/10.1186/s13014-025-02592-0" target="_blank"
+                                rel="noopener noreferrer" class="block w-full" onclick="event.stopPropagation();">
+                                <div
+                                    class="bg-white bg-opacity-70 rounded-xl shadow-sm p-3 hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-white">
+                                    <p class="text-sm md:text-base text-gray-800 m-0">
+                                        <i class="fa fa-external-link text-primary mr-2"></i>
+                                        Liu Y, <i>et al.</i> Postoperative
+                                        radiotherapy improves disease-free survival of EGFR wild-type pN2
+                                        non-squamous-cell
+                                        non-small-cell lung
+                                        cancer
+                                        (Nsq-NSCLC) patients after complete&nbsp; resection: a propensity score matching
+                                        analysis.
+                                        <i>Radiat Oncol</i>. 2025.
+                                        <span style="font-weight: bold; color: #967E76;">（JCR Q1，IF = 3.2）</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 折叠面板交互脚本 -->
+                    <script>
+                        // 获取元素
+                        const toggleBtn = document.getElementById('paperListToggle');
+                        const paperContent = document.getElementById('paperListContent');
+                        const toggleIcon = document.getElementById('toggleIcon');
+
+                        // 初始状态：默认折叠
+                        let isExpanded = false;
+
+                        // 点击切换展开/收起
+                        toggleBtn.addEventListener('click', function () {
+                            isExpanded = !isExpanded;
+                            if (isExpanded) {
+                                // 展开状态
+                                paperContent.style.display = 'block';
+                                toggleIcon.className = 'fa fa-chevron-up text-primary transition-transform duration-300';
+                            } else {
+                                // 收起状态
+                                paperContent.style.display = 'none';
+                                toggleIcon.className = 'fa fa-chevron-down text-primary transition-transform duration-300';
+                            }
+                        });
+                    </script>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                    </div>
+                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
+                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
+                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') ?
+                '<i class="fa fa-bars"></i>' : '<i class="fa fa-times"></i>';
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+
+</html>

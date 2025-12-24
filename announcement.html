@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告栏 - 儿童重要肿瘤与血液性疾病多模态数据分析平台</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind配置：自定义颜色和字体
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6096B4',
+                        secondary: '#EEE9DA',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-dark bg-light">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <!-- <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa fa-flask text-white text-2xl"></i>
+                    
+                </a> -->
+
+                <!-- 桌面端导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">首页</a>
+                    <a href="manual.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">使用手册</a>
+                    <a href="tools.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">分析工具</a>
+                    <a href="help.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">帮助中心</a>
+                    <a href="about.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">关于我们</a>
+                    <a href="contact.html"
+                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                    <a href="announcement.html"
+                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">公告栏</a>
+                </nav>
+
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 公告栏 -->
+        <section id="announcement" class="section-padding bg-light pt-24 md:pt-32">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <i class="fa fa-bullhorn text-6xl text-primary mb-4"></i>
+                    <p class="text-3xl font-semibold text-gray-700 mb-8">最新动态和重要通知</p>
+
+                    <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center">
+                        <h3 class="text-2xl text-gray-600 mb-4">暂无最新公告</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                    </div>
+                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
+                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
+                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
+                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') ?
+                '<i class="fa fa-bars"></i>' : '<i class="fa fa-times"></i>';
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+
+</html>
