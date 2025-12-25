@@ -56,6 +56,33 @@
                 </nav>
             </div>
         </div>
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-white text-xl">
+            <i class="fa fa-bars"></i>
+        </button>
+        </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-primary/95 border-t border-blue-400">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html"
+                    class="text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">首页</a>
+                <a href="manual.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">使用手册</a>
+                <a href="tools.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">分析工具</a>
+                <a href="help.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">帮助中心</a>
+                <a href="about.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">关于我们</a>
+                <a href="contact.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">联系我们</a>
+                <a href="announcement.html"
+                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">公告栏</a>
+            </div>
+        </div>
     </header>
 
     <main class="pt-24 md:pt-32 pb-20">
@@ -174,7 +201,8 @@
                                 </h4>
                                 <p class="text-gray-600 leading-relaxed pl-10 text-justify">
                                     核心区别在于数据维度与分析价值：单模态分析聚焦单一类型数据（如仅基因、仅影像），侧重某一维度的深度挖掘；
-                                    多模态分析整合两种及以上异构数据（如基因 + 影像 + 临床数据），通过跨维度信息互补，能更全面反映疾病复杂机制，在亚型分类、治疗预测、预后评估等场景中，结果更具综合性与准确性。
+                                    多模态分析整合两种及以上异构数据（如基因 + 影像 +
+                                    临床数据），通过跨维度信息互补，能更全面反映疾病复杂机制，在亚型分类、治疗预测、预后评估等场景中，结果更具综合性与准确性。
                                 </p>
                             </div>
 
@@ -219,7 +247,8 @@
                                         <span class="text-primary mr-3 text-lg">Q2.</span> 平台如何保障数据传输安全？
                                     </h4>
                                     <p class="text-gray-600 leading-relaxed pl-10 text-justify">
-                                        平台采用行业标准的 HTTPS 加密传输机制，从技术底层全方位保障数据传输过程的安全性。通过该加密机制，确保传输过程中数据的完整性、机密性与真实性，为科研数据流转提供合规、可靠的安全保障。
+                                        平台采用行业标准的 HTTPS
+                                        加密传输机制，从技术底层全方位保障数据传输过程的安全性。通过该加密机制，确保传输过程中数据的完整性、机密性与真实性，为科研数据流转提供合规、可靠的安全保障。
                                     </p>
                                 </div>
                             </div>
@@ -289,6 +318,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') ?
+                '<i class="fa fa-bars"></i>' : '<i class="fa fa-times"></i>';
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+    </script>
 </body>
 
 </html>
