@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智汇科研 - 多模态数据分析平台 2.0 发布</title>
+    <style>
+        :root {
+            --brand-color: #2563eb;
+            /* 科技蓝 */
+            --accent-green: #10b981;
+            /* 成功绿 */
+            --dark-blue: #1e3a8a;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 顶部欢迎区 */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--brand-color) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+        }
+
+        /* 主体内容卡片 */
+        .main-card {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 2.0 核心亮点：双轴驱动 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature-item {
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid var(--brand-color);
+            padding: 25px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .feature-item h3 {
+            color: var(--brand-color);
+            margin-top: 0;
+        }
+
+        /* 网站功能展示列表 */
+        .portal-features {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .portal-features ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .portal-features li::before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* 管理员区块 */
+        .admin-section {
+            display: flex;
+            align-items: center;
+            background: #eff6ff;
+            border-left: 5px solid var(--brand-color);
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .admin-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--brand-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+
+            .feature-grid,
+            .portal-features ul {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .main-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <span>里程碑升级</span>
+        <h1>多模态数据分析平台 2.0 正式发布</h1>
+        <p>2025年12月25日 · 智慧科研 · 迭代焕新</p>
+    </section>
+
+    <div class="container">
+        <div class="main-card">
+            <p style="font-size: 18px; color: #475569; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                在国家重点研发计划项目步入成果产出的关键时期，课题四研究组正式发布“多模态数据分析平台 2.0”。这标志着平台从单一的计算环境进化为集科研展示、数据协作于一体的综合性数字化门户。
+            </p>
+
+            <h2>核心升级：双驱并行架构</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>前端门户入口</h3>
+                    <p>全新的网站界面，承载功能介绍、工具指引与项目展示，打造课题组的数字化名片。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>后端计算引擎</h3>
+                    <p>深度优化 RStudio Server 集群，提供更稳定的海量多模态数据并行处理能力。</p>
+                </div>
+            </div>
+
+            <h2>网站四大核心功能模块</h2>
+            <div class="portal-features">
+                <ul>
+                    <li><strong>功能工具指引：</strong> 全面多模态数据分析工具</li>
+                    <li><strong>项目成果展示：</strong> 动态呈现项目组优秀论文</li>
+                    <li><strong>课题组风采：</strong> 展现研究团队成员风貌</li>
+                    <li><strong>信息收集渠道：</strong> 提供一站式数据回传反馈</li>
+                </ul>
+            </div>
+
+            <p><strong>【最新动态】</strong> 目前，平台已完成所有内测环节，即将在项目组内部开启<strong>首批试运营</strong>。试运营期间将重点测试多用户并发环境下的算力分配与前端信息交互效率。
+            </p>
+
+            <p style="margin-top: 40px; text-align: center; color: #64748b; font-style: italic;">
+                “致力于打造智慧科研新范式，助力儿童血液疾病防治技术突破。”
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        2023 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有
+    </footer>
+
+</body>
+
+</html>
