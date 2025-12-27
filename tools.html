@@ -148,52 +148,47 @@
 </head>
 
 <body class="font-sans text-dark bg-light min-h-screen">
-    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg h-16 md:h-20 transition-all duration-300">
-        <div class="container mx-auto px-4 md:px-6 h-full">
-            <div class="flex items-center justify-between h-full">
-                <nav class="hidden md:flex items-center space-x-8">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-primary shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+
+                <div class="flex items-center space-x-2 md:hidden max-w-[80%]">
+                    <i class="fa fa-flask text-white text-lg shrink-0"></i>
+                    <span class="text-white font-bold text-sm truncate">儿童重要肿瘤与血液性疾病多模态平台</span>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="index.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">首页</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">首页</a>
                     <a href="manual.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">使用手册</a>
-                    <a href="tools.html"
-                        class="text-white font-medium text-xl transition-colors border-b-2 border-white">分析工具</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">使用手册</a>
+                    <a href="tools.html" class="text-white text-xl font-semibold">分析工具</a>
                     <a href="help.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">帮助中心</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">帮助中心</a>
                     <a href="about.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">关于我们</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">关于我们</a>
                     <a href="contact.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">联系我们</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">联系我们</a>
                     <a href="announcement.html"
-                        class="text-gray-200 hover:text-white font-medium text-xl transition-colors">公告栏</a>
+                        class="text-gray-200 text-xl font-semibold hover:text-white transition-colors">公告栏</a>
                 </nav>
+
+                <button id="menuBtn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
 
-        <!-- 移动端菜单按钮 -->
-        <button id="menuBtn" class="md:hidden text-white text-xl">
-            <i class="fa fa-bars"></i>
-        </button>
-        </div>
-        </div>
-
-        <!-- 移动端导航菜单 -->
-        <div id="mobileMenu" class="md:hidden hidden bg-primary/95 border-t border-blue-400">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="index.html"
-                    class="text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">首页</a>
-                <a href="manual.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">使用手册</a>
-                <a href="tools.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">分析工具</a>
-                <a href="help.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">帮助中心</a>
-                <a href="about.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">关于我们</a>
-                <a href="contact.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">联系我们</a>
-                <a href="announcement.html"
-                    class="text-gray-200 hover:text-white hover:bg-blue-600 py-2 px-3 rounded-md font-medium transition-colors">公告栏</a>
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-primary border-t border-white/10 shadow-xl overflow-hidden transition-all duration-300">
+            <div class="px-4 py-4 flex flex-col space-y-2">
+                <a href="index.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">首页</a>
+                <a href="manual.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">使用手册</a>
+                <a href="tools.html" class="text-white font-bold bg-white/10 py-3 px-4 rounded-lg">分析工具</a>
+                <a href="help.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">帮助中心</a>
+                <a href="about.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">关于我们</a>
+                <a href="contact.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">联系我们</a>
+                <a href="announcement.html" class="text-white/90 py-3 px-4 active:bg-white/5 rounded-lg">公告栏</a>
             </div>
         </div>
     </header>
@@ -224,28 +219,50 @@
     </div>
 
     <!-- 页脚 -->
-    <footer class="bg-dark text-white py-12">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-2">
-                        <i class="fa fa-flask text-primary text-2xl"></i>
-                        <span class="text-xl font-bold">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+    <footer class="bg-dark text-white pt-6 pb-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col gap-6 mb-6">
+
+                <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                    <div class="max-w-2xl">
+                        <div class="flex items-center space-x-2 mb-4 text-primary">
+                            <i class="fa fa-flask text-3xl"></i>
+                            <span
+                                class="text-sm font-bold text-white tracking-tight md:text-base">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed text-xs md:text-sm">
+                            专注于儿童重要肿瘤与血液性疾病，通过多维度数据整合为临床研究提供科学支撑。
+                        </p>
                     </div>
-                    <p class="text-gray-400">专注于儿童重要肿瘤与血液性疾病的多模态数据分析</p>
+
+                    <div class="mt-2 md:text-right">
+                        <p class="text-sm text-gray-400 leading-loose md:max-w-md ml-auto">
+                            <span class="block md:inline">依托“十四五”国家科技部重点研发计划项目</span>
+                            <span class="block text-gray-500 mt-1 md:mt-0">(2022YFC2705000 / 2022YFC2705004)</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a>
-                    <a href="manual.html" class="text-gray-400 hover:text-white transition-colors">使用手册</a>
-                    <a href="tools.html" class="text-gray-400 hover:text-white transition-colors">分析工具</a>
-                    <a href="help.html" class="text-gray-400 hover:text-white transition-colors">帮助中心</a>
-                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于我们</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a>
-                    <a href="announcement.html" class="text-gray-400 hover:text-white transition-colors">公告栏</a>
+
+                <div class="border-t border-white/5 pt-4">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-0">
+                        <h5 class="font-bold text-white/40 shrink-0 md:mr-8 whitespace-nowrap text-xs md:text-sm">快速导航
+                        </h5>
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-400 text-xs md:text-sm">
+                            <a href="index.html" class="hover:text-primary transition-colors whitespace-nowrap">首页</a>
+                            <a href="manual.html" class="hover:text-primary transition-colors whitespace-nowrap">手册</a>
+                            <a href="tools.html" class="hover:text-primary transition-colors whitespace-nowrap">工具</a>
+                            <a href="help.html" class="hover:text-primary transition-colors whitespace-nowrap">帮助</a>
+                            <a href="about.html" class="hover:text-primary transition-colors whitespace-nowrap">关于</a>
+                            <a href="contact.html" class="hover:text-primary transition-colors whitespace-nowrap">联系</a>
+                            <a href="announcement.html"
+                                class="hover:text-primary transition-colors whitespace-nowrap">公告</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有 | 依托“十四五”国家科技部重点研发计划项目（项目/课题编号：2022YFC2705000/2022YFC2705004）</p>
+
+            <div class="border-t border-white/5 pt-8 text-center text-xs text-gray-600">
+                <p>© 2025 儿童重要肿瘤与血液性疾病多模态数据分析平台 版权所有</p>
             </div>
         </div>
     </footer>

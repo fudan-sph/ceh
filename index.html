@@ -130,14 +130,20 @@
                 <!-- 分析功能展示 -->
                 <div class="mb-4">
                     <!-- 核心分析功能标题（胶囊包裹文字+两侧细长条） -->
-                    <div class="flex items-center justify-center mb-6 w-full">
-                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
-                        <!-- 胶囊包裹标题 -->
-                        <div class="bg-primary py-2 px-6 rounded-full shadow-md mx-6">
-                            <h2 class="text-2xl md:text-3xl font-bold text-white whitespace-nowrap text-center">核心分析功能
+                    <div class="flex items-center justify-center mb-8 w-full px-4">
+                        <span
+                            class="flex-grow h-px md:h-0.5 bg-gradient-to-r from-transparent to-primary opacity-60"></span>
+
+                        <div
+                            class="border-2 border-primary/80 py-1 px-5 md:py-1.5 md:px-8 rounded-full mx-4 shrink-0 shadow-sm bg-white">
+                            <h2
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-primary whitespace-nowrap text-center tracking-widest">
+                                核心分析功能
                             </h2>
                         </div>
-                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+
+                        <span
+                            class="flex-grow h-px md:h-0.5 bg-gradient-to-l from-transparent to-primary opacity-60"></span>
                     </div>
 
 
@@ -225,21 +231,27 @@
                 <!-- 发表论文展示 -->
                 <div class="mb-16">
                     <!-- 项目组特色论文标题（保持风格统一） -->
-                    <div class="flex items-center justify-center mb-12 w-full">
-                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
-                        <!-- 胶囊包裹标题 -->
-                        <div class="bg-primary py-2 px-6 rounded-full shadow-md mx-6">
-                            <h2 class="text-2xl md:text-3xl font-bold text-white whitespace-nowrap text-center">项目组特色论文
+                    <div class="flex items-center justify-center mt-8 mb-8 w-full px-4">
+                        <span
+                            class="flex-grow h-px md:h-0.5 bg-gradient-to-r from-transparent to-primary opacity-60"></span>
+
+                        <div
+                            class="border-2 border-primary/80 py-1 px-5 md:py-1.5 md:px-8 rounded-full mx-4 shrink-0 shadow-sm bg-white">
+                            <h2
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-primary whitespace-nowrap text-center tracking-widest">
+                                项目组特色论文
                             </h2>
                         </div>
-                        <span class="flex-grow h-1 bg-primary shadow-md"></span>
+
+                        <span
+                            class="flex-grow h-px md:h-0.5 bg-gradient-to-l from-transparent to-primary opacity-60"></span>
                     </div>
 
                     <div class="mobile-scroll-container md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
 
                         <!-- 论文1 -->
                         <div
-                            class="mobile-card bg-white border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
+                            class="mobile-card bg-[#F8E2CF] bg-opacity-20 border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
                             <!-- 给图片添加a标签，跳转对应PDF -->
                             <a href="resources/paper1.pdf" target="_blank" class="block aspect-video overflow-hidden">
                                 <img src="images/papers_pictures/paper1.jpg" alt="论文1"
@@ -255,7 +267,7 @@
 
                         <!-- 论文2 -->
                         <div
-                            class="mobile-card bg-white border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
+                            class="mobile-card bg-[#ECE2E1] bg-opacity-20 border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
                             <!-- 给图片添加a标签，跳转对应PDF -->
                             <a href="resources/paper2.pdf" target="_blank" class="block aspect-video overflow-hidden">
                                 <img src="images/papers_pictures/paper2.jpg" alt="论文2"
@@ -271,7 +283,7 @@
 
                         <!-- 论文3 -->
                         <div
-                            class="mobile-card bg-white border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
+                            class="mobile-card bg-[#D3E0DC] bg-opacity-20 border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
                             <a href="resources/paper3.pdf" target="_blank" class="block aspect-video overflow-hidden">
                                 <img src="images/papers_pictures/paper3.jpg" alt="论文3"
                                     class="w-full h-full object-cover">
@@ -286,7 +298,7 @@
 
                         <!-- 论文4 -->
                         <div
-                            class="mobile-card bg-white border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
+                            class="mobile-card bg-[#AEE1E1] bg-opacity-20 border border-gray-100 rounded-2xl overflow-hidden card-hover flex flex-col">
                             <a href="resources/paper4.pdf" target="_blank" class="block aspect-video overflow-hidden">
                                 <img src="images/papers_pictures/paper4.jpg" alt="论文4"
                                     class="w-full h-full object-cover">
@@ -646,20 +658,18 @@
                         const paperContent = document.getElementById('paperListContent');
                         const toggleIcon = document.getElementById('toggleIcon');
 
-                        // 初始状态：默认折叠
-                        let isExpanded = false;
-
                         // 点击切换展开/收起
                         toggleBtn.addEventListener('click', function () {
-                            isExpanded = !isExpanded;
-                            if (isExpanded) {
-                                // 展开状态
-                                paperContent.style.display = 'block';
-                                toggleIcon.className = 'fa fa-chevron-up text-primary transition-transform duration-300';
+                            // 1. 切换内容的显示与隐藏
+                            // 如果你使用的是 Tailwind 的 hidden 类，用下面的方式最简单：
+                            const isHidden = paperContent.classList.toggle('hidden');
+
+                            // 2. 旋转图标 (旋转比切换类名更丝滑)
+                            // 展开时旋转 180 度，折叠时回到 0 度
+                            if (isHidden) {
+                                toggleIcon.style.transform = 'rotate(0deg)';
                             } else {
-                                // 收起状态
-                                paperContent.style.display = 'none';
-                                toggleIcon.className = 'fa fa-chevron-down text-primary transition-transform duration-300';
+                                toggleIcon.style.transform = 'rotate(180deg)';
                             }
                         });
                     </script>
@@ -671,22 +681,23 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="bg-dark text-white pt-10 pb-6">
+    <footer class="bg-dark text-white pt-6 pb-4">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col gap-10 mb-10">
+            <div class="flex flex-col gap-6 mb-6">
 
                 <div class="flex flex-col md:flex-row justify-between items-start gap-8">
                     <div class="max-w-2xl">
                         <div class="flex items-center space-x-2 mb-4 text-primary">
                             <i class="fa fa-flask text-3xl"></i>
-                            <span class="text-xl font-bold text-white tracking-tight">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
+                            <span
+                                class="text-sm font-bold text-white tracking-tight md:text-base">儿童重要肿瘤与血液性疾病多模态数据分析平台</span>
                         </div>
-                        <p class="text-gray-400 leading-relaxed text-base">
+                        <p class="text-gray-400 leading-relaxed text-xs md:text-sm">
                             专注于儿童重要肿瘤与血液性疾病，通过多维度数据整合为临床研究提供科学支撑。
                         </p>
                     </div>
 
-                    <div class="md:text-right">
+                    <div class="mt-2 text-right">
                         <p class="text-sm text-gray-400 leading-loose md:max-w-md ml-auto">
                             <span class="block md:inline">依托“十四五”国家科技部重点研发计划项目</span>
                             <span class="block text-gray-500 mt-1 md:mt-0">(2022YFC2705000 / 2022YFC2705004)</span>
@@ -694,20 +705,19 @@
                     </div>
                 </div>
 
-                <div class="border-t border-white/5 pt-8">
+                <div class="border-t border-white/5 pt-4">
                     <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-0">
-                        <h5 class="font-bold text-base text-white/40 shrink-0 md:mr-8 whitespace-nowrap">快速导航</h5>
-                        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-400 text-sm md:text-base">
+                        <h5 class="font-bold text-white/40 shrink-0 md:mr-8 whitespace-nowrap text-xs md:text-sm">快速导航
+                        </h5>
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-400 text-xs md:text-sm">
                             <a href="index.html" class="hover:text-primary transition-colors whitespace-nowrap">首页</a>
-                            <a href="manual.html"
-                                class="hover:text-primary transition-colors whitespace-nowrap">使用手册</a>
-                            <a href="tools.html" class="hover:text-primary transition-colors whitespace-nowrap">分析工具</a>
-                            <a href="help.html" class="hover:text-primary transition-colors whitespace-nowrap">帮助中心</a>
-                            <a href="about.html" class="hover:text-primary transition-colors whitespace-nowrap">关于我们</a>
-                            <a href="contact.html"
-                                class="hover:text-primary transition-colors whitespace-nowrap">联系我们</a>
+                            <a href="manual.html" class="hover:text-primary transition-colors whitespace-nowrap">手册</a>
+                            <a href="tools.html" class="hover:text-primary transition-colors whitespace-nowrap">工具</a>
+                            <a href="help.html" class="hover:text-primary transition-colors whitespace-nowrap">帮助</a>
+                            <a href="about.html" class="hover:text-primary transition-colors whitespace-nowrap">关于</a>
+                            <a href="contact.html" class="hover:text-primary transition-colors whitespace-nowrap">联系</a>
                             <a href="announcement.html"
-                                class="hover:text-primary transition-colors whitespace-nowrap">公告栏</a>
+                                class="hover:text-primary transition-colors whitespace-nowrap">公告</a>
                         </div>
                     </div>
                 </div>
